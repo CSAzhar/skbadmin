@@ -29,7 +29,7 @@ const DashBoard = () => {
             </div>
 
             <div className="mt-5 text-center">
-                <button className="btn btn-primary btn-lg">View Detailed Report</button>
+                <button className="btn btn-primary btn-lg">View Detailed Reports Total</button>
             </div>
         </div>
     );
