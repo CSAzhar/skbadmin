@@ -1,0 +1,35 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Starting installation in ${CODEBUILD_SRC_DIR}"
+      - ls -la
+      - echo "Copying adminpanel to protected location..."
+      - cp -r adminpanel /tmp/adminpanel-build
+      - cd /tmp/adminpanel-build && npm install
+
+  build:
+    commands:
+      - echo "Building from protected location..."
+      - cd /tmp/adminpanel-build && npm run build
+      - echo "Copying build artifacts..."
+      - mkdir -p adminpanel/dist
+      - cp -r /tmp/adminpanel-build/dist/* adminpanel/dist/
+
+  post_build:
+    commands:
+      - echo "Deploying to S3..."
+      - aws s3 sync adminpanel/dist/ s3://skbadmin --delete
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: adminpanel/dist
+
+cache:
+  paths:
+    - '/tmp/adminpanel-build/node_modules/**/*'
+
+runtime-versions:
+  nodejs: 20
