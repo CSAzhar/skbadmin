@@ -5,7 +5,9 @@ import { toast } from "react-toastify";
 
 export default class LiveFoodApi{
 
-   static BASE_URL = 'http://localhost:8002/skb/food/livefoods';
+    static baseApi = import.meta.env.VITE_API_BASE_URL;
+   static BASE_URL = `${this.baseApi}/skb/food/livefoods`;
+//    static BASE_URL = 'http://localhost:8002/skb/food/livefoods';
 
 
    static async getLiveFoods(){

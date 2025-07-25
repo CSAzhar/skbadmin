@@ -5,7 +5,9 @@ import { toast } from "react-toastify";
 
 export default class OrderApiService{
 
-   static BASE_URL = 'http://localhost:8002/skb/order/';
+    static baseApi = import.meta.env.VITE_API_BASE_URL;
+   static BASE_URL = `${this.baseApi}/skb/order/`;
+//    static BASE_URL = 'http://localhost:8002/skb/order/';
 
 
    static async getAllOrders(){
