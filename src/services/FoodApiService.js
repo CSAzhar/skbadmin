@@ -5,13 +5,9 @@ import { toast } from "react-toastify";
 
 export default class ApiService{
 
-<<<<<<< HEAD
-   static BASE_URL = 'http://3.80.41.161:8002/skb/food/';
-=======
     static baseApi = import.meta.env.VITE_API_BASE_URL;
    static BASE_URL = `${this.baseApi}/skb/food/`;
 //    static BASE_URL = 'http://localhost:8002/skb/food/';
->>>>>>> dev
 
    static async addFood(formData){
     try {
