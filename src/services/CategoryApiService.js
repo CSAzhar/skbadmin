@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 export default class CategoryApiService{
 
    static BASE_URL = 'http://3.80.41.161:8002/skb/category/';
-
+    //new change
    static async addCategory(formData){
     try {
         const response = await axios.post(this.BASE_URL, formData,{
