@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 export default class ApiService{
 
-   static BASE_URL = 'http://localhost:8002/skb/food/';
+   static BASE_URL = 'http://3.80.41.161:8002/skb/food/';
 
    static async addFood(formData){
     try {
