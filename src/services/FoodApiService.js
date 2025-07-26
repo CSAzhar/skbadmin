@@ -8,11 +8,7 @@ export default class ApiService{
     static baseApi = import.meta.env.VITE_API_BASE_URL;
    static BASE_URL = `${this.baseApi}/skb/food/`;
 //    static BASE_URL = 'http://localhost:8002/skb/food/';
-<<<<<<< HEAD
-//test2 updated second
-=======
-//test
->>>>>>> dev
+
    static async addFood(formData){
     try {
         const response = await axios.post(this.BASE_URL, formData, {
