@@ -58,7 +58,7 @@ const AddFood = () => {
             <div className="row ">
                 <div className="card col-md-6">
                     <div className="card-body">
-                        <h2 className="mb-4">Add Food</h2>
+                        <h2 className="mb-4">Add Foods</h2>
 
                         <form onSubmit={onSubmitHandler}>
 
