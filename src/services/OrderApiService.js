@@ -9,7 +9,7 @@ export default class OrderApiService{
    static BASE_URL = `${this.baseApi}/skb/order/`;
 //    static BASE_URL = 'http://localhost:8002/skb/order/';
 
-
+//testgit ok tested ok worked again
    static async getAllOrders(){
     try{
         const response = await axios.get(`${this.BASE_URL}all-admin`);
